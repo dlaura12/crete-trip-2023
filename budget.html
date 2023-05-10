@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <link rel="stylesheet" href="budget.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <main>
+            <header>
+                <button class="burger" onclick="toggleMenu()"></button>
+                    <div class="menu">
+                        <nav>
+                            <a href="budget.html" style="animation-delay: 0.3s">Budget</a>
+                            <a href="index.html" style="animation-delay: 0.2s">Destinations</a>
+                            <a href="gallery.html" style="animation-delay: 0.4s">Gallery</a>
+                        </nav>
+                    </div>
+                    <script type="text/javascript">
+                    const toggleMenu = () => document.body.classList.toggle("open");
+                    </script>
+                <h1>Budget</h1>
+            </header>
+            
+            <table>
+                <caption>Holiday Expenses</caption>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price per Person</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Heraklion Accomodation</th>
+                        <td>€117</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Matala Accomodation</th>
+                        <td>€28</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Plakias Accomodation</th>
+                        <td>€17</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Agia Roumeli Accomodation</th>
+                        <td>€18</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Chania Accomodation</th>
+                        <td>€86</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2 Car Rentals with Insurance</th>
+                        <td>€200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fuel for 2 cars</th>
+                        <td>€50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Parking fees for 2 cars</th>
+                        <td>€20</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Groceries</th>
+                        <td>€225</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Eating out</th>
+                        <td>€450</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Drinks</th>
+                        <td>€300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cash out for mojitos</th>
+                        <td>€36</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ferrys and Boats</th>
+                        <td>€50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cretan Olive Farm</th>
+                        <td>€7</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Matala Caves</th>
+                        <td>€5</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pedal boats</th>
+                        <td>€5</td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td>€1,600</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <footer>
+                <p>Live. Laugh. Drink Raki.</p>
+            </footer>
+        </main>
+    </body>
+</html>

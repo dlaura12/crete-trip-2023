@@ -1,0 +1,407 @@
+/* COLOUR PALETTE
+https://color.adobe.com/search?q=pastel
+#FEE8E2 - beige
+#FFFCD7 - yellow
+#CBE8DD - minty green
+#F8C8C5 - pink
+#DFD4EB - purple
+#BDD9F2 - light blue
+#19162B - very dark blue */
+
+/* GLOBAL STYLES
+------------------------------------------------------------------------------------------------------------- */
+
+body{
+    text-align: center;
+    margin:0;
+    padding:0;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    background-color: #FEE8E2;
+    color: #19162B  ;
+    background-image: linear-gradient( #CBE8DD, #BDD9F2, #DFD4EB, #F8C8C5, #FFFCD7);
+}
+
+a {
+    color: #19162B;
+    transition: all 0.2s ease-in-out;
+}
+a:hover{
+  opacity: 0.5;
+}
+
+h5 {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+h5 a:hover {
+    color: rgb(75, 66, 69);
+    font-size: 19px;
+}
+
+h1{
+  margin-bottom: 0;
+}
+
+h1,h2{
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    margin-top: 50px;
+}
+h2{
+  margin-bottom: 10px;
+  padding-top:20px;
+}
+
+
+
+
+/* -----------------------------------------NAVIGATION-------------------------------------------------------- */
+
+@media screen and (min-width: 800px) {
+
+.navigation {
+  margin:auto;
+  padding-bottom: 30px;
+  width: 90%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+
+.next{
+  padding-top: 40px;
+  font-size: 55px;
+  width: 90px;
+  transition: all 500ms ease-in-out;
+}
+.next:hover{
+  transform: translateX(50%);
+}
+
+.previous{
+  padding-top: 40px;
+  font-size: 55px;
+  width: 90px;
+  transition: all 500ms ease-in-out;
+}
+.previous:hover{
+  transform: translateX(-50%);
+}
+}
+
+@media screen and (max-width: 799px){
+
+  .navigation {
+    margin:auto;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    width: 80%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .next{
+    padding-top: 50px;
+    font-size: 45px;
+    width: 20px;
+  }
+  
+  .previous{
+    padding-top: 50px;
+    font-size: 45px;
+    width: 20px;
+  }
+}
+
+
+/* MENU 
+--------------------------------------------------------------------------------------------------------------*/
+button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.burger,
+.menu {
+  position: fixed;
+}
+.burger {
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  background-image: url("pictures/menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.open .burger {
+  background-image: url("pictures/close.svg");
+}
+
+.menu {
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: grid;
+  align-items: center;
+  width: 400px;
+  height: 100%;
+  background-image: url("pictures/brendie.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  translate: -100% 0;
+  transition: translate 0.375s cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
+/* Making menu invisible on the normal page */
+.menu nav {
+  opacity: 0;
+}
+
+/* Annimation made for the way the menu appears */
+
+@keyframes menu-in {
+  0% {
+    clip-path: ellipse(60% 60% at 0% 50%);
+  }
+  100% {
+    clip-path: ellipse(120% 120% at 0% 50%);
+  }
+}
+body.open .menu {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+  animation: menu-in 0.375s;
+}
+
+/* Making menu visble when open */
+body.open .menu nav {
+  opacity: 1;
+}
+
+/* Opacity for the entire nav */
+.menu nav:hover a {
+  opacity: 0.25;
+}
+/* Opacity for one item in the nav */
+.menu nav a:hover {
+  opacity: 1;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+.menu a {
+  position: relative;
+  color: #19162B;
+  font-size: 32px;
+  font-family: "Euclid Circular A";
+  padding: 20px 0;
+  width: 300px;
+  text-decoration: none;
+  transition: 0.4s;
+  transform: translate(0, -150px);
+}
+
+.menu a::before,
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.menu a::before {
+  opacity: 0;
+  background: rgb(255 255 255 / 20%);
+}
+
+.menu a::after {
+  transform: scaleX(0);
+  transform-origin: 0% 50%;
+  background: #19162B;
+}
+
+.menu a:hover::before {
+  opacity: 1;
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    translate: -30px 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body.open .menu a {
+  animation: appear 0.25s backwards;
+}
+
+
+/* ITINERARY
+----------------------------------------------------------------------------------------------------------------- */
+
+.container-itinerary {
+    margin:auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.itinerary-item {
+    flex: 45%;
+    max-width: 49%;
+    text-align: center;
+    padding: 30px 5px;
+}
+
+@media screen and (max-width: 800px)  {
+  .container-itinerary {
+    margin:auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.itinerary-item {
+    flex: 50%;
+    max-width: 49%;
+    text-align: center;
+    padding: 30px 5px;
+}
+}
+
+
+/* Responsive Image Grid
+-------------------------------------------------------------------------------------------------------------- */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 4px;
+    width: 100%;
+  }
+  
+  /* Create four equal columns that sit next to each other */
+  .column {
+    flex: 25%;
+    max-width: 24%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 100%;
+      padding: 0 35px;
+    }
+  }
+
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+  }
+
+  /* FOOTER
+-------------------------------------------------------------------------------------------------------------------- */
+
+/* .container-footer {
+    margin:auto;
+    width: 100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+.footer-item {
+    text-align: center;
+    line-height: 30px;
+    margin:auto;
+    margin-bottom: 20px;
+    flex: 1 0 100px;
+    padding-top: 45px;
+}
+
+
+.container-footer a {
+  text-decoration: none;
+  font-family: 'Great Vibes', cursive;
+  font-size: 25px;
+  transition: 0.4s;
+  display: inline-block;
+  position: relative;
+  color: #19162B;
+}
+
+.container-footer a:hover{
+  font-size: 30px;
+}
+
+.container-footer a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #19162B;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.container-footer a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+} */
+
+footer {
+  text-align: center;
+  height: 100px;
+  border-radius: 10px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  opacity: 0.8;
+}
